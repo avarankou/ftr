@@ -117,6 +117,9 @@ namespace ftr
             {
                 list_files(dir);
 
+                if (!func)
+                    return;
+
                 if (settings.max_threads == 1u)
                 {
                     for (const auto & file : *file_lists)
