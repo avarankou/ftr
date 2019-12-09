@@ -91,6 +91,10 @@ namespace ftr
 
     fs::path subdirs(const fs::path & path, const fs::path & base_dir)
     {
-        return path.string().substr(base_dir.string().length());
+        const size_t len = base_dir.string().length();
+        if (len >= path.string().length())
+            return std::string();
+
+        return path.string().substr(len);
     }
 }
